@@ -19,13 +19,10 @@ You can change `--dict_path` to specify whether using chord or not.
 `--dict_path` should be smae as training option.
 
 ## generate from scratch
-`python main.py --is_train False \
-                --prompt False \
-                --output_path your-path-here \
+`python main.py --is_train False \/n
+                --prompt False \/n
+                --output_path your-path-here \/n
                 --model_path your-path-here`
                 
 ## continue generating
-`python main.py --is_train False \`
-`                --prompt_path your-path-here \`
-                --output_path your-path-here \
-                --model_path your-path-here`
+`python main.py --is_train False --prompt_path your-path-here --output_path your-path-here --model_path your-path-here`
