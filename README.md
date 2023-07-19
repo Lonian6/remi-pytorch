@@ -8,16 +8,24 @@ Please follow the step in REMI. https://github.com/YatingMusic/remi
 You can change `--dict_path` to specify whether using chord or not.
 
 ## from scratch
-`python main.py`
+`python main.py --dict_path your-path-here`
 
 ## continue
-`python main.py --is_continue True --continue_pth your-path-here`
+```
+python main.py --is_continue True \
+--continue_pth your-path-here
+```
 
 # Testing
 `--dict_path` should be same as training option.
 
 ## generate from scratch
-`python main.py --is_train False --prompt False --output_path your-path-here --model_path your-path-here`
+```
+python main.py --is_train False \  
+--prompt False \  
+--output_path your-path-here \  
+--model_path your-path-here
+```
                 
 ## continue generating
 ```
