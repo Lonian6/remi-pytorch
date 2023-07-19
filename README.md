@@ -20,10 +20,7 @@ You can change `--dict_path` to specify whether using chord or not.
 `python main.py --is_train False --prompt False --output_path your-path-here --model_path your-path-here`
                 
 ## continue generating
-`python main.py --is_train False \ 
-
---prompt_path your-path-here \ 
-
---output_path your-path-here \ 
-
---model_path your-path-here `
+`python main.py --is_train False \  
+--prompt_path your-path-here \  
+--output_path your-path-here \  
+--model_path your-path-here`
