@@ -1,8 +1,8 @@
 # remi-pytorch
-Re-write the pop-music transformer and integrate with hugging face API
+Implement the pop-music transformer and integrate with hugging face API
 
 # Data preparation
-Please follow the step in REMI. https://github.com/YatingMusic/remi
+Please follow the steps in REMI. https://github.com/YatingMusic/remi
 
 # Training
 You can change `--dict_path` to specify whether using chord or not.
