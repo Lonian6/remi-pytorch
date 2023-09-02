@@ -29,18 +29,18 @@ import argparse
 def parse_opt():
     parser = argparse.ArgumentParser()
     # training opts
-    parser.add_argument('--is_train', type=bool,
-                        help='True for training, False for testing.', default=True)
-    parser.add_argument('--is_continue', type=bool,
-                        help='True for continue training, False for training from scratch.', default=False)
+    parser.add_argument('--is_train', type=int,
+                        help='1 for training, 0 for testing.', default=1)
+    parser.add_argument('--is_continue', type=int,
+                        help='1 for continue training, 0 for training from scratch.', default=0)
     parser.add_argument('--continue_pth', type=str,
                         help='Continue training checkpoint path.', default='')
     parser.add_argument('--dict_path', type=str,
                         help='Decide using chord or not.', default='./dictionary/dictionary_REMI-tempo-checkpoint.pkl')
     
     # testing opts
-    parser.add_argument('--prompt', type=bool,
-                        help='False for generating from scratch, True for continue generating.', default=False)
+    parser.add_argument('--prompt', type=int,
+                        help='0 for generating from scratch, 1 for continue generating.', default=False)
     parser.add_argument('--prompt_path', type=str,
                         help='if prompt is True, you have to specify the continue generating midi file path.', default='')
         # './data/evaluation/000.midi'
@@ -129,8 +129,7 @@ class NewsDataset(Dataset):
                 if len(data) == self.group_size:
                     segments.append(data)
         segments = np.array(segments)
-#         print(pairs.shape)
-#         print(type(segments))
+
         print(segments.shape)
         return segments
 
@@ -154,7 +153,7 @@ class Model(nn.Module):
         self.n_token = len(self.event2word)
         self.learning_rate = 0.0002
         # load model
-#         super(TransfoXLModel, self.model).__init__()
+
         self.configuration = TransfoXLConfig(   attn_type = 0,
                                                 adaptive = False,
                                                 clamp_len = -1,
@@ -181,7 +180,7 @@ class Model(nn.Module):
                                                 tie_projs = [],
                                                 vocab_size = self.n_token,
                                                 untie_r = False)
-#         
+         
         # Initializing a model (with random weights) from the configuration
         self.xl = TransfoXLModel(self.configuration)
         self.drop = nn.Dropout(p=self.dropout)
@@ -421,5 +420,4 @@ def main(opt):
 
 if __name__ == '__main__':
     opt = parse_opt()
-    # print(opt)
     main(opt)
