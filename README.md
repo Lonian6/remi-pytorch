@@ -13,7 +13,7 @@ You can change `--dict_path` to specify whether using chord or not.
 ## continue
 ```
 python main.py \
---is_continue True \
+--is_continue 1 \
 --continue_pth your-path-here
 ```
 
@@ -23,15 +23,15 @@ python main.py \
 ## generate from scratch
 ```
 python main.py \
---is_train False \
---prompt False \
+--is_train 0 \
+--prompt 0 \
 --output_path your-path-here \
 --model_path your-path-here
 ```
                 
 ## continue generating
 ```
-python main.py --is_train False \
+python main.py --is_train 0 \
 --prompt_path your-path-here \
 --output_path your-path-here \
 --model_path your-path-here
